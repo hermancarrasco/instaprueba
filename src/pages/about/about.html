@@ -1,11 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            About
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+    <button ion-button block (click)="obtener()"> obtener datos</button>
+    <pre>
+    {{ datos }}
+  </pre>
 
 </ion-content>
