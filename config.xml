@@ -91,6 +91,7 @@
         <variable name="ANDROID_HOST" value="hermancarrasco.auth0.com" />
         <variable name="ANDROID_PATHPREFIX" value="/cordova/cl.hermancarrasco.instaprueba/callback" />
     </plugin>
+    <allow-navigation href="http://172.20.10.4:8101" sessionid="27ab326b" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="7.0.0" />
 </widget>

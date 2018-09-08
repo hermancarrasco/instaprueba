@@ -11,20 +11,10 @@ export class AboutPage {
   datos:any;
 
   constructor(public navCtrl: NavController,public auth:AuthProvider) {
-
+        auth.mostrar();
   }
 
-  obtener(){
-      this.auth.mostrar().subscribe(data=>{
-        console.log("mostrando lo traido");
-        console.log(data);
-        this.datos=data;
-      },err=>{
-        console.log("error al mostrar la cosa");
-        console.log(err);
-        
-      });
-  }
+  
 
 
 }

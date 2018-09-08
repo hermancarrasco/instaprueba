@@ -10,7 +10,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class HomePage {
 
   constructor(public navCtrl: NavController, public auth:AuthProvider) {
-
   }
 
+  
 }

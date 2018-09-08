@@ -7,23 +7,55 @@
 </ion-header>
 
 <ion-content padding>
-    <p *ngIf="auth.loading" text-center>Loading...</p>
+    <p *ngIf="auth.loading" text-center>Cargando...</p>
     <ng-template [ngIf]="!auth.loading">
 
-        <button ion-button block color="primary" *ngIf="!auth.loggedIn" (click)="auth.login()">Log In</button>
+        <button ion-button block color="primary" *ngIf="!auth.loggedIn" (click)="auth.login()">Iniciar Sesión</button>
 
         <ng-template [ngIf]="auth.loggedIn">
             <ion-card *ngIf="auth.user">
                 <img [src]="auth.user.picture">
                 <ion-card-content>
                     <ion-card-title>{{ auth.user.name }}</ion-card-title>
+
+                    <ion-list>
+                        <ion-item>
+                            Usuario:
+                            <p>{{auth.user["nickname"]}}</p>
+                        </ion-item>
+                        <ion-item>
+                            Nombre:
+                            <p>{{auth.user["name"]}}</p>
+                        </ion-item>
+                        <ion-item>
+                            Sitio Web:
+                            <p>{{auth.user["website"]}}</p>
+                        </ion-item>
+                        <div *ngIf="auth.datosInstagram">
+                            <ion-item>
+                                Biografia:
+                                <p> {{auth.datosInstagram.data["bio"]}}</p>
+                            </ion-item>
+                            <ion-item>
+                                Publicaciones:
+                                <p>{{ auth.datosInstagram.data.counts.media }}</p>
+                            </ion-item>
+                            <ion-item>
+                                Seguidores:
+                                <p>{{ auth.datosInstagram.data.counts.followed_by }}</p>
+                            </ion-item>
+                            <ion-item>
+                                Seguidos:
+                                <p>{{ auth.datosInstagram.data.counts.follows }}</p>
+                            </ion-item>
+                        </div>
+                    </ion-list>
+
                     <pre>{{ auth.user | json }}</pre>
                 </ion-card-content>
             </ion-card>
-            <button ion-button block color="danger" (click)="auth.logout()">Log Out</button>
+            <button ion-button block color="danger" (click)="auth.logout()">Cerrar Sesión</button>
         </ng-template>
     </ng-template>
-    {{auth.accessToken}}
-
 
 </ion-content>
